@@ -6,10 +6,10 @@
 typedef struct POCKETMON
 {
     int num;
-    char name[25];
+    char name[21];
 }pocketmon;
 
-void pocketprint(pocketmon *arr, char *input, int n);
+void pocketprint(pocketmon *arr, int n);
 
 pocketmon arr[100005];
 
@@ -22,19 +22,20 @@ int main()
     {
         scanf("%s", arr[i].name);
     }   
-    
-    char input[25] = {};
-    
+
     for(int i = 0; i < m; i++)
     {
-        scanf("%s", input);
-        pocketprint(arr, input, n);       
+        pocketprint(arr, n);       
     }
     
 }
 
-void pocketprint(pocketmon *arr, char *input, int n)
+void pocketprint(pocketmon *arr,int n)
 {
+    
+    char input[21] = {};
+    scanf("%s", input);
+    
     int intinput = atoi(input);
     if(intinput != 0)
     {
