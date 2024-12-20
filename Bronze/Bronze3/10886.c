@@ -4,7 +4,7 @@
 int main()
 {
     int n; scanf("%d", &n);
-    
+    int a = 0;
     
     int onecount = 0;
     int zerocount = 0;
