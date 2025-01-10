@@ -29,15 +29,7 @@ int main()
         {
             str2check[str2[j] - 'a'] += 1;
         }
-        for(int j = 0; j <= 'z' - 'a'; j++)
-        {
-            printf("%d ", str1check[j]);
-        }
-        printf("\n");
-        for(int j = 0; j <= 'z' - 'a'; j++)
-        {
-            printf("%d ", str2check[j]);
-        }
+        
         
         
         if (length1 != length2)
