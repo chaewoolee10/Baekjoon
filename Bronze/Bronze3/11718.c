@@ -5,9 +5,9 @@
 
 int main()
 {
-    char str[105];
     for(int i = 0; i < 100; i++)
     {
+        char str[105] = ""; 
         scanf("%[^\n]s", str);
         getchar();
         printf("%s\n", str);
