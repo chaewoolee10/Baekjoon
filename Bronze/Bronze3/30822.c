@@ -6,7 +6,7 @@ void stringcheck(int *uospc, char *str, int n);
 int main()
 {
     int n; scanf("%d", &n);
-    char str[1001] = {};
+    char str[1005] = {};
     scanf("%s", str);
     int uospc[5] = {};
     
@@ -48,9 +48,11 @@ void stringcheck(int *uospc, char *str, int n)
             uospc[4]++;
         }
     }
+    /*
     for(int i = 0; i < 5; i++)
     {
         printf("%d", uospc[i]);
     }
     printf("\n");
+    */
 }
