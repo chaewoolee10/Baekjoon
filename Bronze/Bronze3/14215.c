@@ -29,6 +29,13 @@ int main()
     }
     else //정삼각형이 아닌 경우
     {
-        printf("%d", 2 * remain - 1);
+        if(remain <= max)
+        {
+            printf("%d", 2 * remain - 1);
+        }
+        else
+        {
+            printf("%d", remain + max);
+        }
     }
 }
