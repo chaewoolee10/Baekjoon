@@ -9,12 +9,12 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    getchar();
-    char command[10] = {};
+    
     int arr[SIZE] = {};
 
     for (int i = 0; i < n; i++)
     {
+        char command[10] = {};
         scanf("%s", command);
         commandcheck(command, arr);
     }
