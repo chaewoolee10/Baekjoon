@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "istream": "c"
+        "istream": "c",
+        "stdio.h": "c"
     }
 }
