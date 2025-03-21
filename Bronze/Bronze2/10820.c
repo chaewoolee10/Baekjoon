@@ -6,21 +6,18 @@ void stringcheck(char *str);
 
 int main()
 {
-    char str[100][105] = {};
+    char str[105] = {};
     int count = 0;
     for(int i = 0; i < 100; i++)
     {
-        if(scanf("%s", str[i]) == -1)
+        if(scanf("%[^\n]s", str) == EOF)
         {
             break;
         }
-        
+        getchar();
+        stringcheck(str);
         count++;
     }    
-    for(int i = 0; i < count; i++)
-    {
-        stringcheck(str[i]);
-    }
 }
 
 void stringcheck(char *str)
