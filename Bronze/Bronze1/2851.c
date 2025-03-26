@@ -10,18 +10,14 @@ int main()
     }
 
     int sum = arr[0];
-
-    if (sum == 100)
-    {
-        printf("%d", sum);
-    }
-
+    
     for (int i = 1; i < 10; i++)
     {
         if (100 - (sum + arr[i]) < 0)
         {
             if (100 - sum > (sum + arr[i]) - 100)
             {
+                /*
                 if (sum >= 100)
                 {
                     break;
@@ -29,17 +25,23 @@ int main()
                 else
                 {
                     sum += arr[i];
-                }
+                }*/
+                sum += arr[i];
             }
             else if(100 - sum == (sum + arr[i]) - 100)
             {
                 sum += arr[i];
+            }
+            else
+            {
+                break;
             }
         }
         else
         {
             if (100 - sum > 100 - (sum + arr[i]))
             {
+                /*
                 if (sum >= 100)
                 {
                     break;
@@ -48,6 +50,12 @@ int main()
                 {
                     sum += arr[i];
                 }
+                */
+                sum += arr[i];
+            }
+            else
+            {
+                break;
             }
         }
     }
