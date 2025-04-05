@@ -7,8 +7,8 @@ int main()
     char n[11] = {};
     scanf("%s", n);
     
-    int first = 1;
-    int last = 1;
+    long long int first = 1;
+    long long int last = 1;
     int length = strlen(n);
     int checker = 0;
     
@@ -28,6 +28,7 @@ int main()
         {
             printf("YES");
             checker = 1;
+            break;
         }
         else
         {
