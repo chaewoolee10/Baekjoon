@@ -3,15 +3,15 @@
 #include <stdlib.h>
 
 
-typedef struct POCKETMON
+typedef struct POKETMON
 {
     int num;
     char name[21];
-}pocketmon;
+}poketmon;
 
-void pocketprint(pocketmon *arr, int n);
+void poketprint(poketmon *arr, int n);
 
-pocketmon arr[100005];
+poketmon arr[100005];
 
 int main()
 {
@@ -25,18 +25,19 @@ int main()
 
     for(int i = 0; i < m; i++)
     {
-        pocketprint(arr, n);       
+        poketprint(arr, n);       
     }
     
 }
 
-void pocketprint(pocketmon *arr,int n)
+void poketprint(poketmon *arr,int n)
 {
     
     char input[21] = {};
     scanf("%s", input);
     
     int intinput = atoi(input);
+    
     if(intinput != 0)
     {
         printf("%s\n", arr[intinput - 1].name);
