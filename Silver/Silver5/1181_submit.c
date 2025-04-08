@@ -3,7 +3,6 @@
 #include <stdlib.h>
 
 int compare(const void *a, const void *b);
-//int comparebydict(const void *a, const void *b);
 
 int main()
 {
