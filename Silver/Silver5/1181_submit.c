@@ -33,8 +33,11 @@ int main()
 
 int compare(const void *a, const void *b)
 {
-    int len_a = strlen(a);
-    int len_b = strlen(b);
+    const char *apoint = (const char *)a;
+    const char *bpoint = (const char *)b;
+    
+    int len_a = strlen(apoint);
+    int len_b = strlen(bpoint);
     
     if(len_a < len_b)
     {
@@ -46,7 +49,7 @@ int compare(const void *a, const void *b)
     }
     else
     {
-        if(strcmp(a, b) > 0)
+        if(strcmp(apoint, bpoint) > 0)
         {
             return 1;
         }
