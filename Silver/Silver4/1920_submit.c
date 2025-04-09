@@ -30,7 +30,7 @@ int main()
     {
         long long int mnum = 0;
         scanf("%lld", &mnum);
-
+        
         marr[i] = binarysearch(narr, n, mnum);
     }
 
