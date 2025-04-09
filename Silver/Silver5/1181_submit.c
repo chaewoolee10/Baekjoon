@@ -1,3 +1,4 @@
+//1181
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -6,7 +7,7 @@ int compare(const void *a, const void *b);
 
 int main()
 {
-    char str[20000][21] = {};
+    char str[20000][51] = {};
     
     int n; scanf("%d", &n);
     
@@ -19,11 +20,7 @@ int main()
     
     for(int i = 0; i < n; i++)
     {
-        if(i < n - 1 && !strcmp(str[i], str[i + 1]))
-        {
-            continue;
-        }
-        else
+        if(i == 0 || strcmp(str[i], str[i - 1]))
         {
             printf("%s\n", str[i]);
         }
