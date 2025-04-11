@@ -58,6 +58,9 @@ int binarysearch(int *arr, int n, int target)
 {
     int firstidx = 0;
     int lastidx = n - 1;
+    int upper = 0;
+    int lower = 0;
+    int targetidx = 0;
     
     while(1)
     {
@@ -69,7 +72,16 @@ int binarysearch(int *arr, int n, int target)
         }
         if(arr[mididx] == target)
         {
-            
+            targetidx = mididx;
+            return 1;
+        }
+        if(arr[mididx] > target)
+        {
+            lastidx = mididx - 1;
+        }
+        else
+        {
+            firstidx = mididx + 1;
         }
         
     }
