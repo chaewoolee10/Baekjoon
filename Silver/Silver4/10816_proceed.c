@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 int compare(const void *a, const void *b);
-
+int binarysearch(int *arr, int n, int target);
 
 int main()
 {
@@ -26,6 +26,11 @@ int main()
     
     int marr[500000] = {};
     
+    for(int i = 0; i < m; i++)
+    {
+        int a; scanf("%d", &a);
+        marr[i] = binarysearch(narr, n, a);
+    }
     
 }
 
@@ -47,4 +52,25 @@ int compare(const void *a, const void *b)
         return 0;
     }
     
+}
+
+int binarysearch(int *arr, int n, int target)
+{
+    int firstidx = 0;
+    int lastidx = n - 1;
+    
+    while(1)
+    {
+        int mididx = (firstidx + lastidx) / 2;
+        
+        if(firstidx > lastidx)
+        {
+            return 0;
+        }
+        if(arr[mididx] == target)
+        {
+            
+        }
+        
+    }
 }
