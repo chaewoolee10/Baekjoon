@@ -28,9 +28,9 @@ void commandcheck(char *command, int *arr)
         
         for(int i = 0; i < SIZE; i++)
         {
-            if(arr[SIZE - i - 1] == 0)
+            if(arr[i] == 0)
             {
-                arr[SIZE - i - 1] = a;
+                arr[i] = a;
                 break;    
             }
         }
@@ -38,7 +38,7 @@ void commandcheck(char *command, int *arr)
     else if (!strcmp(command, "pop"))
     {
         int flag = 0;
-        for(int i = SIZE - 1; i >= 0; i--)
+        for(int i = 0; i < SIZE; i++)
         {
             if(arr[i] != 0)
             {
@@ -68,7 +68,7 @@ void commandcheck(char *command, int *arr)
     else if (!strcmp(command, "front"))
     {
         int flag = 0;
-        for(int i = SIZE - 1; i >= 0; i--)
+        for(int i = 0; i < SIZE; i++)
         {
             if(arr[i] != 0)
             {
@@ -85,7 +85,7 @@ void commandcheck(char *command, int *arr)
     else if (!strcmp(command, "back"))
     {
         int flag = 0;
-        for(int i = 0; i < SIZE; i++)
+        for(int i = SIZE - 1; i >= 0; i--)
         {
             if(arr[i] != 0)
             {
