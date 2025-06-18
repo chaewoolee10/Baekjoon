@@ -1,6 +1,8 @@
 // 1526
 #include <stdio.h>
 
+int checker(int *arr, int i);
+
 int main()
 {
     int arr[7] = {};
@@ -17,30 +19,63 @@ int main()
         n /= 10;
         i++;
     }
-    if (arr[i - 1] < 4)
+
+    if (checker(arr, i) == 1)
     {
-        arr[i - 1] = 0;
-        arr[i - 2] = 7;
-    }
-    for (int j = i - 2; j >= 0; j--)
-    {
-        if (arr[j] < 4 && arr[j + 1] == 7)
+        for (int j = 0; j < i; j++)
         {
-            arr[j + 1] = 4;
-            arr[j] = 7;
-            arr[j - 1] = 10;
+            if (arr[j] > 7)
+            {
+                arr[j] = 7;
+            }
+            if (arr[j] < 4 && j != i - 1)
+            {
+                arr[j + 1]--;
+                arr[j] = 7;
+            }
+            if (arr[j] >= 4 && arr[j] < 7)
+            {
+                if (j != i - 1)
+                {
+                    arr[j] = 7;
+                    arr[j + 1]--;
+                }
+                else
+                {
+                    arr[j] = 4;
+                }
+            }
+            if (arr[i - 1] == 0)
+            {
+
+                break;
+            }
         }
-        if(arr[j] > 7)
+        if (arr[i - 1] <= 3 && arr[i - 1] > 0)
         {
-            arr[j] = 7;
+            arr[i - 1] = 0;
         }
     }
-    for (int k = 0; k < i; k++)
+
+    for (int j = i - 1; j >= 0; j--)
     {
-        if (arr[i - k - 1] == 0)
+        if (arr[j] == 0)
         {
             continue;
         }
-        printf("%d", arr[i - k - 1]);
+        printf("%d", arr[j]);
     }
+}
+
+int checker(int *arr, int i)
+{
+    int check = 0;
+    for (int j = 0; j < i; j++)
+    {
+        if (arr[j] != 4 && arr[j] != 7)
+        {
+            check = 1;
+        }
+    }
+    return check;
 }
