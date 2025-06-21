@@ -45,7 +45,7 @@ int count_arr(int *arr, int length, int ref)
                 if (arr[j] != ref || j == length - 1)
                 {
                     criteria++;
-                    i = j + 1;
+                    i = j;
                     break;
                 }
             }
