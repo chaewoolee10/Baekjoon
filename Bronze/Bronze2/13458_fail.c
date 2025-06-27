@@ -28,7 +28,7 @@ int main()
             req += cal(ai[i], c);
         }
     }
-    printf("%d", req);
+    printf("%lld", req);
 }
 
 int cal(int ai, int c)
