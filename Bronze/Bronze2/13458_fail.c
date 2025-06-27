@@ -7,7 +7,7 @@ int main()
 {
     int n;
     scanf("%d", &n); // 시험장 개수
-    int req = 0;     // 필요한 감독관 수
+    long long int req = 0;     // 필요한 감독관 수
 
     int ai[1000000] = {};
     for (int i = 0; i < n; i++)
@@ -34,7 +34,11 @@ int main()
 int cal(int ai, int c)
 {
     int req = 0;
-    while (1) // 감시해야 하는 응시자 숫자가 0보다 작아질 때까지 c를 뺌
+    // 감시해야 하는 응시자 숫자가 0보다 작아질 때까지 c를 뺌
+    req += ai / c;
+    req += ai % c == 0 ? 0 : 1;
+    /*
+    while (1) 
     {
         if (ai <= 0)
         {
@@ -43,5 +47,6 @@ int cal(int ai, int c)
         ai -= c;
         req++;
     }
+    */
     return req;
 }
