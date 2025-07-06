@@ -1,58 +1,64 @@
 // 2033
 #include <stdio.h>
 
-void roundprint(int n);
+void round_gen(int n, int *arr);
 
 int main()
 {
-    int n;
-    scanf("%d", &n);
-
-    if (n < 5)
+    int n; scanf("%d", &n);
+    int arr[10] = {};
+    if(n < 10)
     {
-        printf("%d",n);
-    }
-    else if (n >= 5 && n < 10)
-    {
-        printf("10");
+        printf("%d", n);
     }
     else
     {
-        roundprint(n);
+        round_gen(n, arr);
     }
 }
 
-void roundprint(int n)
+void round_gen(int n, int *arr)
 {
-    int numarr[9] = {};
-    int i = 0;
+    int a = n;
+    int length = 0;
     while (1)
     {
-        if (n == 0)
+        if(a == 0)
         {
             break;
         }
-        numarr[9 - i - 1] = n % 10;
+        a /= 10;
+        length++;
+    }
+    arr[0] = 0;
+    for(int i = length; i > 0; i--)
+    {
+        arr[i] = n % 10;
         n /= 10;
-        i++;
     }
-
-    for (int j = 0; j < i - 1; j++)
+    for(int i = length; i > 0; i--)
     {
-        if (numarr[9 - j - 1] >= 5)
+        if(arr[i] >= 5 && i != 1)
         {
-            numarr[9 - j - 2]++;
+            arr[i] = 0;
+            arr[i - 1]++;
+            if(arr[i - 1] == 10)
+            {
+                arr[i - 1] = 0;
+                arr[i - 2]++;
+            }
         }
-        numarr[9 - j - 1] = 0;
+        else if(arr[i] < 5 && i != 1)
+        {
+            arr[i] = 0;
+        }
     }
-    if(numarr[9 - i + 1] == 10)
+    for(int i = 0; i <= length; i++)
     {
-        numarr[9 - i] = 0;
-        numarr[9 - i - 1] = 1;
-        i++;
-    }
-    for(int j = 9 - i; j < 9; j++)
-    {
-        printf("%d", numarr[j]);
+        if(i == 0 && arr[i] == 0)
+        {
+            continue;
+        }
+        printf("%d", arr[i]);
     }
 }
