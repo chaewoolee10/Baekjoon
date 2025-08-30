@@ -6,8 +6,8 @@ typedef long long int LLD;
 LLD dat[250000] = {};
 int back = 1;
 
-void downhip();
-void uphip(int a);
+void downheap();
+void upheap(int a);
 
 int main()
 {
@@ -20,7 +20,7 @@ int main()
         scanf("%lld", &a);
         if (a == 0)
         {
-            downhip();
+            downheap();
         }
         else
         {
@@ -31,7 +31,7 @@ int main()
             }
             else
             {
-                uphip(a);
+                upheap(a);
             }
         }
         // for (int j = 0; j < 10; j++)
@@ -42,7 +42,7 @@ int main()
     }
 }
 
-void downhip()
+void downheap()
 {
     if (back == 1)
     {
@@ -83,7 +83,7 @@ void downhip()
         }
     }
 }
-void uphip(int a)
+void upheap(int a)
 {
     dat[back] = a;
     int i = back;
