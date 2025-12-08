@@ -16,17 +16,33 @@ int main()
     getchar();
     int n; scanf("%d", &n);
     DATE a = chartostruc(str);
-    a.day += n;
-    if(a.day > 30)
+    if(a.day > 0)
     {
-        a.day += n;
-        a.month += a.day / 30;
-        a.day %= 30;
+        int ext_day = a.day + n;
+        while(1)
+        {
+            if(ext_day <= 30)
+            {
+                a.day = ext_day;
+                break;
+            }
+            ext_day -= 30;
+            a.month++;
+        }
     }
     if(a.month > 12)
     {
-        a.year += a.month / 12;
-        a.month %= 12;
+        int ext_month = a.month;
+        while(1)
+        {
+            if(ext_month <= 12)
+            {
+                a.month = ext_month;
+                break;
+            }
+            ext_month -= 12;
+            a.year++;
+        }
     }
     printf("%d-",a.year);
     if(a.month < 10)
