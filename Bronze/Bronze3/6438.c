@@ -8,10 +8,10 @@ int main()
     getchar();
     for(int i = 0; i < n; i++)
     {
-        char str[100] = {}; scanf("%[^\n]s", str);
+        char str[100] = {}; scanf("%[^\n]", str);
         getchar();
         int length = strlen(str);
-        for(int j = length; j >= 0; j--)
+        for(int j = length - 1; j >= 0; j--)
         {
             printf("%c", str[j]);
         }
