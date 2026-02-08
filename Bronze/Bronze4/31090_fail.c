@@ -8,10 +8,7 @@ int main()
     for(int i = 0; i < n; i++)
     {
         int a; scanf("%d", &a);
-        int b = a / 1000;
-        b *= 10;
-        int c = a % 10;
-        int num = b + c;
+        int num = a % 100;
         a++;
         if(a % num == 0)
         {
