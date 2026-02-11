@@ -1,4 +1,5 @@
 //15904
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -35,4 +36,27 @@ int main()
     printf("I ");
     check ? printf("love ") : printf("hate ");
     printf("UCPC");
+}
+*/
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[1004] = {}; scanf("%[^\n]s", str);
+    int length = strlen(str);
+    char target[5] = "UCPC";
+    int idx = 0;
+    for(int i = 0; i < length; i++)
+    {
+        if(str[i] == target[idx])
+        {
+            idx++;
+        }
+        if(idx == 4)
+        {
+            break;
+        }
+    }
+    idx == 4 ? printf("I love UCPC") : printf("I hate UCPC");
 }
