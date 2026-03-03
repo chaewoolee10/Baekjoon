@@ -39,7 +39,7 @@ void minesweep(int r, int c)
                 {
                     for(int l = j - 1; l <= j + 1; l++)
                     {
-                        if(k < 0 || k > r || l < 0 || l > c)
+                        if(k < 0 || k >= r || l < 0 || l >= c)
                         {
                             continue;
                         }
