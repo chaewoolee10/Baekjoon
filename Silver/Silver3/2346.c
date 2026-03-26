@@ -1,5 +1,4 @@
 //2346
-
 #include <stdio.h>
 
 int find_idx(int *que, int idx, int n);
@@ -22,12 +21,12 @@ int main()
         count--;
         idx = find_idx(que, idx, n);
         printf("%d ", idx + 1);
-        /*
+        
         for(int i = 0; i < n; i++)
         {
             printf("%d ", que[i]);
         }
-        printf("\n");*/
+        printf("\n");
     }
 }
 int find_idx(int *que, int idx, int n)
